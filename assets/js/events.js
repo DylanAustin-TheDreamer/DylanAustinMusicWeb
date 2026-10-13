@@ -1,5 +1,5 @@
 const EVENTS_API =
-  "https://events-api.YOUR-SUBDOMAIN.workers.dev/";
+  "https://events.austindylan0.workers.dev/";
 
 async function loadEvents() {
   try {
@@ -20,7 +20,7 @@ async function loadEvents() {
     // Pass events to your existing event-rendering function.
     // Example: renderEvents(events);
 
-    return events;
+    renderEvents(events);
   } catch (error) {
     console.error("Failed to load events:", error);
     return [];
