@@ -109,6 +109,41 @@ h1 em, h2 em { color: #8f79ac; font-weight: 500; }
 .event p { color: var(--muted); font-size: 12px; margin: 0 0 8px; }
 .event a { border-bottom: 1px solid var(--line); font-size: 11px; letter-spacing: .04em; margin-top: auto; padding-top: 22px; width: fit-content; }
 .event a:hover { color: #8f79ac; }
+
+/* Interior pages */
+.page-header { background: var(--lavender); padding: 170px 11vw 90px; }
+.page-header-inner { max-width: 760px; }
+.page-header h1 { font-size: clamp(54px, 7vw, 96px); margin-bottom: 0; }
+.page-main { padding: 0 11vw; }
+.page-section { border-top: 1px solid var(--line); padding: 92px 0 120px; }
+.page-section-heading { align-items: end; display: flex; justify-content: space-between; margin-bottom: 48px; }
+.page-section-heading h2 { font-size: clamp(40px, 4.5vw, 62px); margin: 0; }
+
+.gallery-grid { display: grid; gap: 18px; grid-template-columns: repeat(12, minmax(0, 1fr)); }
+.gallery-item { background: var(--lavender); min-height: 230px; overflow: hidden; position: relative; }
+.gallery-item:nth-child(1), .gallery-item:nth-child(4) { grid-column: span 6; min-height: 390px; }
+.gallery-item:nth-child(2), .gallery-item:nth-child(3), .gallery-item:nth-child(5), .gallery-item:nth-child(6) { grid-column: span 3; }
+.gallery-item img { display: block; height: 100%; object-fit: cover; transition: transform .35s ease; width: 100%; }
+.gallery-item:hover img { transform: scale(1.03); }
+
+.setlist-sections { display: grid; gap: 70px; }
+.setlist-section { border-top: 1px solid var(--line); padding-top: 24px; }
+.setlist-section:first-child { border-top: 0; padding-top: 0; }
+.setlist-section h3 { font-family: var(--serif); font-size: 28px; font-weight: 500; letter-spacing: -.04em; margin: 0 0 20px; }
+.setlist { border-top: 1px solid var(--line); }
+.setlist-item { align-items: center; border-bottom: 1px solid var(--line); display: grid; gap: 20px; grid-template-columns: 50px 1fr auto; min-height: 68px; padding: 12px 0; }
+.setlist-number { color: var(--lavender-dark); font-size: 11px; letter-spacing: .1em; }
+.setlist-title { font-family: var(--serif); font-size: 21px; }
+.setlist-meta { color: var(--muted); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+
+.about-layout { display: grid; gap: 12%; grid-template-columns: 1fr 1fr; }
+.about-lead { background: linear-gradient(135deg, rgba(233,226,245,.85), transparent 65%); min-height: 300px; }
+.about-copy { border-left: 1px solid var(--line); color: var(--muted); max-width: 430px; min-height: 240px; padding-left: 12%; }
+.about-copy p { margin: 0 0 24px; }
+.about-details { border-top: 1px solid var(--line); display: grid; gap: 30px; grid-template-columns: repeat(3, 1fr); margin-top: 90px; padding-top: 24px; }
+.about-detail { min-height: 100px; }
+.about-detail-label { color: var(--muted); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+
 @media (max-width: 700px) {
     .site-header { padding: 22px 6vw; }
     .main-nav, .header-link { display: none; }
@@ -137,4 +172,17 @@ h1 em, h2 em { color: #8f79ac; font-weight: 500; }
     .site-footer { align-items: flex-start; flex-wrap: wrap; gap: 20px; padding: 25px 6vw; }
     .site-footer > p:first-of-type { display: none; }
     .copyright { width: 100%; }
+    .page-header { padding: 138px 9vw 70px; }
+    .page-main { padding: 0 9vw; }
+    .page-section { padding: 70px 0 85px; }
+    .page-section-heading { display: block; margin-bottom: 34px; }
+    .gallery-grid { gap: 12px; }
+    .gallery-item, .gallery-item:nth-child(1), .gallery-item:nth-child(2), .gallery-item:nth-child(3), .gallery-item:nth-child(4), .gallery-item:nth-child(5), .gallery-item:nth-child(6) { grid-column: span 6; min-height: 190px; }
+    .gallery-item:nth-child(1), .gallery-item:nth-child(4) { min-height: 280px; }
+    .setlist-sections { gap: 52px; }
+    .setlist-item { gap: 12px; grid-template-columns: 34px 1fr; }
+    .setlist-meta { grid-column: 2; }
+    .about-layout { display: block; }
+    .about-copy { border-left: 0; margin-top: 40px; padding-left: 0; }
+    .about-details { gap: 22px; grid-template-columns: 1fr; margin-top: 65px; }
 }
