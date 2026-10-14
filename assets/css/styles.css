@@ -114,6 +114,8 @@ h1 em, h2 em { color: #8f79ac; font-weight: 500; }
 .page-header { background: var(--lavender); padding: 170px 11vw 90px; }
 .page-header-inner { max-width: 760px; }
 .page-header h1 { font-size: clamp(54px, 7vw, 96px); margin-bottom: 0; }
+.form-embed { align-items: center; display: flex; flex-direction: column; margin: 1rem auto 0; max-width: 800px; text-align: center; width: 100%; }
+.form-embed iframe { border: 0; display: block; max-width: 640px; width: 100%; }
 .page-main { padding: 0 11vw; }
 .page-section { border-top: 1px solid var(--line); padding: 92px 0 120px; }
 .page-section-heading { align-items: end; display: flex; justify-content: space-between; margin-bottom: 48px; }
@@ -173,6 +175,8 @@ h1 em, h2 em { color: #8f79ac; font-weight: 500; }
     .site-footer > p:first-of-type { display: none; }
     .copyright { width: 100%; }
     .page-header { padding: 138px 9vw 70px; }
+    .form-embed { margin-left: calc(50% - 50vw); max-width: none; width: 100vw; }
+    .form-embed iframe { max-width: 640px; width: calc(100% - 2rem); }
     .page-main { padding: 0 9vw; }
     .page-section { padding: 70px 0 85px; }
     .page-section-heading { display: block; margin-bottom: 34px; }
