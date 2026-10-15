@@ -40,13 +40,23 @@ function renderEvents(events) {
   events.forEach((event) => {
     const eventElement = document.createElement("div");
     eventElement.classList.add("event");
+    if (event.ticket_url) {
     eventElement.innerHTML = `
       <h3>${event.title}</h3>
       <p>${event.description}</p>
       <p><strong>Date:</strong> ${event.date}</p>
       <p><strong>Venue:</strong> ${event.venue}</p>
-      <a href="${event.ticket_url}" target="_blank" rel="noopener noreferrer">Get Tickets</a>
+      <a href="${event.ticket_url}" target="_blank" rel="noopener noreferrer" class="button button-dark">Get Tickets</a>
     `;
+    } else {
+      eventElement.innerHTML = `
+        <h3>${event.title}</h3>
+        <p>${event.description}</p>
+        <p><strong>Date:</strong> ${event.date}</p>
+        <p><strong>Venue:</strong> ${event.venue}</p>
+      <p><em>Free Entry</em></p>
+      `;
+    }
     eventsContainer.appendChild(eventElement);
   });
 

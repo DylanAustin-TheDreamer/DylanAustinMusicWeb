@@ -122,11 +122,15 @@ h1 em, h2 em { color: #8f79ac; font-weight: 500; }
 .page-section-heading h2 { font-size: clamp(40px, 4.5vw, 62px); margin: 0; }
 
 .gallery-grid { display: grid; gap: 18px; grid-template-columns: repeat(12, minmax(0, 1fr)); }
-.gallery-item { background: var(--lavender); min-height: 230px; overflow: hidden; position: relative; }
-.gallery-item:nth-child(1), .gallery-item:nth-child(4) { grid-column: span 6; min-height: 390px; }
-.gallery-item:nth-child(2), .gallery-item:nth-child(3), .gallery-item:nth-child(5), .gallery-item:nth-child(6) { grid-column: span 3; }
-.gallery-item img { display: block; height: 100%; object-fit: cover; transition: transform .35s ease; width: 100%; }
+.gallery-item { background: var(--lavender); display: grid; grid-column: span 6; grid-template-columns: minmax(0, 1.65fr) minmax(120px, .85fr); margin: 0; min-height: 280px; overflow: hidden; }
+.gallery-item:empty { display: none; }
+.gallery-item img { background: #f3eff9; display: block; height: 100%; min-height: 280px; object-fit: contain; transition: transform .35s ease; width: 100%; }
 .gallery-item:hover img { transform: scale(1.03); }
+.gallery-credit { align-self: stretch; display: flex; flex-direction: column; justify-content: center; padding: 28px; }
+.gallery-credit-label { color: var(--muted); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
+.gallery-credit p { color: var(--muted); font-size: 12px; margin: 12px 0 0; }
+.gallery-credit a { border-bottom: 1px solid var(--line); color: var(--ink); }
+.gallery-credit a:hover { color: #8f79ac; }
 
 .setlist-sections { display: grid; gap: 70px; }
 .setlist-section { border-top: 1px solid var(--line); padding-top: 24px; }
@@ -181,8 +185,9 @@ h1 em, h2 em { color: #8f79ac; font-weight: 500; }
     .page-section { padding: 70px 0 85px; }
     .page-section-heading { display: block; margin-bottom: 34px; }
     .gallery-grid { gap: 12px; }
-    .gallery-item, .gallery-item:nth-child(1), .gallery-item:nth-child(2), .gallery-item:nth-child(3), .gallery-item:nth-child(4), .gallery-item:nth-child(5), .gallery-item:nth-child(6) { grid-column: span 6; min-height: 190px; }
-    .gallery-item:nth-child(1), .gallery-item:nth-child(4) { min-height: 280px; }
+    .gallery-item { display: block; grid-column: 1 / -1; min-height: 0; }
+    .gallery-item img { height: auto; min-height: 0; }
+    .gallery-credit { padding: 22px; }
     .setlist-sections { gap: 52px; }
     .setlist-item { gap: 12px; grid-template-columns: 34px 1fr; }
     .setlist-meta { grid-column: 2; }
