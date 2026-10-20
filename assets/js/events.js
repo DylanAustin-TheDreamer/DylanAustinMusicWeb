@@ -2,6 +2,20 @@ const EVENTS_API =
   "https://events.austindylan0.workers.dev/";
 
 async function loadEvents() {
+  const eventsContainer = document.getElementById("events-container");
+
+  if (!eventsContainer) {
+    console.error("Events container not found");
+    return [];
+  }
+
+  eventsContainer.innerHTML = `
+    <div class="events-loading" role="status" aria-live="polite">
+      <span class="loading-spinner" aria-hidden="true"></span>
+      <span>Loading events...</span>
+    </div>
+  `;
+
   try {
     const response = await fetch(EVENTS_API);
 
@@ -23,6 +37,11 @@ async function loadEvents() {
     renderEvents(events);
   } catch (error) {
     console.error("Failed to load events:", error);
+    eventsContainer.innerHTML = `
+      <p class="events-message" role="alert">
+        Events are temporarily unavailable. Please try again later.
+      </p>
+    `;
     return [];
   }
 }
